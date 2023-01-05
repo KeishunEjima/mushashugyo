@@ -1,0 +1,27 @@
+$colors: (
+	black: #000000,
+	white: #ffffff,
+	yellow: #ffdb00,
+);
+
+//グラデーション用
+@mixin gradient($direction, $key-1, $percentage-1: 0.07%, $key-2, $percentage-2: 99.93%) {
+	background: linear-gradient(
+		$direction + deg,
+		map-get($colors, $key-1) $percentage-1,
+		map-get($colors, $key-2) $percentage-2
+	);
+}
+
+// **
+// * 色変数を取得する
+// * @param {Stirng} $key $colorsのキー
+// * @param {?Float} $opacity 不透明度 0 ~ 1.0
+// * @return {String} カラーコードまたはrgba
+// ************************************************
+@function color($key, $opacity: null) {
+	@if $opacity != null {
+		@return rgba(map-get($colors, $key), $opacity);
+	}
+	@return map-get($colors, $key);
+}

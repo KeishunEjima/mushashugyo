@@ -1,0 +1,14 @@
+@use "../../base/function/__importer" as f;
+
+.btn {
+    border: 2px solid f.color(black);
+
+    &_text {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    &:before {
+        background: f.color(black);
+    }
+}

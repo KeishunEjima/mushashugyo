@@ -1,0 +1,12 @@
+@use "../../base/function/__importer" as f;
+
+.footer {
+    padding: 18px 0;
+    background: f.color(black); 
+    color: f.color(white);
+    font-size: f.rem(13);
+
+    @include f.media-query(sm) {
+        font-size: f.rem(18);
+    }
+}

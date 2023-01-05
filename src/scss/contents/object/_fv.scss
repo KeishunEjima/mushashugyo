@@ -1,0 +1,18 @@
+@use "../../base/function/__importer" as f;
+
+.fv {
+    &_text {
+        font-size: f.rem(60);
+        font-weight: f.font-weight(gothic, bold);
+    }
+
+    &_block {
+        &.-yellow {
+            background-color: f.color(yellow);
+        }
+
+        &.-white {
+            background-color: f.color(white);
+        }
+    }
+}

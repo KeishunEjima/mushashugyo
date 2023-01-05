@@ -1,0 +1,23 @@
+@use "../../base/function/__importer" as f;
+
+.news {
+    &_items {
+        padding: 30px;
+        border-top: 1px solid #ccc;
+
+        &:last-of-type {
+            border-bottom: 1px solid #ccc;
+        }
+    }
+
+    &_date {
+        font-weight: bold;
+    }
+
+    &_title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-left: 40px;
+    }
+}

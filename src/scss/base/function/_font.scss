@@ -1,0 +1,62 @@
+$fonts: (
+	gothic: (
+		family: "'YakuHanJPs_Noto', 'Noto Sans JP', 'sans-serif'",
+		weights: (
+			medium: 500,
+			bold: 700,
+			black: 900,
+		),
+	),
+);
+
+// **
+// * font-familyを取得する
+// * @param {Stirng} $fonts-key $fontsのキー名
+// * @return {String} font-family
+// ************************************************
+@function font-family($fonts-key) {
+	$font: map-get($fonts, $fonts-key);
+
+	@return unquote(map-get($font, family));
+}
+
+// **
+// * font-weightを取得する
+// * @param {Stirng} $fonts-key $fontsのキー名
+// * @return {String} font-weight
+// ************************************************
+@function font-weight($fonts-key, $weights-key) {
+	$font: map-get($fonts, $fonts-key);
+	$font-weights: map-get($font, weights);
+	@return map-get($font-weights, $weights-key);
+}
+
+// **
+// * フォントを一括設定する
+// * @param {Stirng} $fonts-key $fontsのキー名
+// * @param {String} $weights-key $fontsのweightsのキー名
+// ************************************************
+@mixin font($fonts-key, $weights-key: normal, $font-style: null) {
+	font-family: font-family($fonts-key);
+	font-weight: font-weight($fonts-key, $weights-key);
+	@if ($font-style != null) {
+		font-style: $font-style;
+	}
+}
+
+// **
+// * フォントウェイトを設定する
+// * @param {Stirng} $fonts-key $fontsのキー名
+// * @param {String} $weights-key $fontsのweightsのキー名
+// ************************************************
+@mixin font-weight($fonts-key, $weights-key: normal, $font-style: null) {
+	font-weight: font-weight($fonts-key, $weights-key);
+}
+
+// **
+// * フォントファミリーを設定する
+// * @param {Stirng} $fonts-key $fontsのキー名
+// ************************************************
+@mixin font-family($fonts-key) {
+	font-family: font-family($fonts-key);
+}

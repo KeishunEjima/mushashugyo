@@ -1,0 +1,32 @@
+@use "../../base/function/__importer" as f;
+
+.l-footer {
+    width: 100vw;
+
+    &_inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 70%;
+
+        @include f.media-query(sm) {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &_nav {
+        display: flex;
+        align-items: center;
+
+        @include f.media-query(sm) {
+            display: none;
+        }
+    }
+
+    &_item {
+        margin-right:  70px;
+    }
+}

@@ -1,0 +1,13 @@
+@use "../../base/function/__importer" as f;
+
+.sec-title {
+    &_title {
+        font-size: 75px;
+        font-weight: bold;
+        color: f.color(yellow);
+    }
+
+    &_slug {
+        font-weight: bold;
+    }
+}

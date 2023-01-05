@@ -1,0 +1,36 @@
+@use "../../base/function/__importer" as f;
+
+.header {
+    &_inner {
+        padding: 16px 0;
+
+        @include f.media-query(2xl) {
+            padding: 16px 48px;
+        }
+
+        @include f.media-query(xl) {
+            padding: 0 36px;
+        }
+    }
+
+    &_list {
+        display: flex;
+        align-items: center;
+    }
+
+    &_item {
+        a {
+            font-size: f.rem(12);
+            font-weight: bold;
+
+            @include f.media-query(xl) {
+                font-size: f.rem(10);
+            }
+        }
+
+        &:before {
+            background: f.color(black);
+            transition: .4s ease 0s;
+        }
+    }
+}

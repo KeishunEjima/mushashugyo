@@ -1,0 +1,19 @@
+@use "sass:math";
+$basesize: (
+	ip: 390px,
+	sm: 640px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+	2xl: 1440px,
+);
+
+// **
+// * pxをvwに変換
+// * @param {Interger} $lines 表示する行数
+// * @param {Number} $line-height 計算に使用する行高
+// * @return {String} 返還後の値[rem]
+// ************************************************ */
+@function vw($px, $key) {
+	@return (math.div(100, map-get($basesize, $key)) * $px) * 1vw;
+}

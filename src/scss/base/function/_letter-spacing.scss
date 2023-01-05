@@ -1,0 +1,10 @@
+// **
+// * letter-spacing
+// * @param {Interger} $av XDに表示されているAV値
+// ************************************************
+@mixin ls($av) {
+	$ls: calc(($av / 1000) * 1em);
+	display: inline-block;
+	letter-spacing: $ls;
+	margin-right: calc($ls * -1);
+}

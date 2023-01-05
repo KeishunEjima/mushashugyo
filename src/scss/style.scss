@@ -1,0 +1,31 @@
+/* Start footer */
+@use  "frame/__footer";
+/* End footer */
+
+/* Start header */
+@use  "frame/__header";
+/* End header */
+
+/* Start btn */
+@use  "contents/__btn";
+/* End btn */
+
+/* Start sec-news */
+@use  "contents/__sec-news";
+/* End sec-news */
+
+/* Start sec-title */
+@use  "contents/__sec-title";
+/* End sec-title */
+
+/* Start fv */
+@use  "contents/__fv";
+/* End fv */
+
+/* Start reset */
+@use  "base/_reset";
+/* End reset */
+
+/* Start link */
+@use  "utility/link";
+/* End link */

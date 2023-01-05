@@ -1,0 +1,43 @@
+$breakpoints: (
+	xs: screen and
+		(
+			max-width: 390px,
+		),
+	sm: screen and
+		(
+			max-width: 769px,
+		),
+	md: screen and
+		(
+			max-width: 919px,
+		),
+	lg: screen and
+		(
+			max-width: 1023px,
+		),
+	xl: screen and
+		(
+			max-width: 1279px,
+		),
+	2xl: screen and
+		(
+			max-width: 1439px,
+		),
+);
+
+// **
+// * ブレイクポイントを取得する
+// * @param {Stirng} $breakpoints $breakpointsの指定
+// * @param {?Float} $breakpoint max-widthの指定
+// * @return {String} mediaクエリを返す
+// ************************************************
+@mixin media-query($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media #{inspect(map-get($breakpoints, $breakpoint))} {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+	}
+}

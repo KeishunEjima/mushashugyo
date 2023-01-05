@@ -1,0 +1,51 @@
+{
+  "name": "hudo",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "run-p minify w:sass w:esbuild w:autoprefixer serve",
+    "build": "run-s clean minify sass esbuild autoprefixer",
+    "minify": "run-s clean:image minify:image minify:webp",
+    "clean:image": "rimraf dist/assets/image/",
+    "minify:image": "imagemin src/image/* --out-dir=dist/assets/image --plugin.pngquant.quality={0.65,0.8} --plugin.mozjpeg.quality=80 --plugin.gifsicle.interlaced=true --plugin.svgo.cleanupIDs=false",
+    "minify:webp": "imagemin src/image/*.{jpg,jpeg,png,gif} --out-dir=dist/assets/image --plugin.webp.quality=90",
+    "sass": "sass src/scss/style.scss:dist/assets/css/style.css --style compressed --no-source-map ",
+    "w:sass": "sass src/scss/style.scss:dist/assets/css/style.css --style expanded --no-source-map -w ",
+    "autoprefixer": "postcss dist/assets/css/*.css -d dist/assets/css/",
+    "w:autoprefixer": "postcss dist/assets/css/*.css -d dist/assets/css/ -w",
+    "esbuild": "run-s build-script build-import rm-js",
+    "w:esbuild": "run-p w:build-script w:build-import rm-js",
+    "build-script": "esbuild src/scripts/*.js --outdir=dist/assets/js --bundle --minify",
+    "build-import": "esbuild src/scripts/import/*.js --outdir=dist/assets/css --bundle --minify",
+    "w:build-script": "esbuild src/scripts/*.js --outdir=dist/assets/js --bundle --watch",
+    "w:build-import": "esbuild src/scripts/import/*.js --outdir=dist/assets/css --bundle --watch",
+    "rm-js": "rimraf dist/assets/css/*.js -w",
+    "clean": "rimraf dist/",
+    "serve": "browser-sync start --config bs-config.js"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not ie < 11",
+    "Android >= 4",
+    "iOS >= 10"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "browser-sync": "^2.27.11",
+    "esbuild": "^0.16.13",
+    "imagemin-cli": "^7.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.1",
+    "imagemin-webp": "^7.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.57.1",
+    "swiper": "^8.4.5"
+  }
+}

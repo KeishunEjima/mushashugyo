@@ -1,0 +1,64 @@
+@use "../../base/function/__importer" as f;
+
+.l-header {
+    width: 100vw;
+    height: 77px;
+    
+    &_inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 70%;
+        height: 100%;
+
+        @include f.media-query(2xl) {
+            width: 100%;
+        }
+    }
+
+    &_logo {
+        width: f.rem(300);
+    }
+
+    &_list {
+        display: flex;
+        align-items: center;
+    }
+
+    &_item {
+        position: relative;
+        margin-left: 30px;
+
+        &:hover:before {
+            left: 0;
+            width: 100%
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            display: block;
+            right: 0;
+            bottom: -10px;
+        }
+
+        .init {
+            position: relative;
+        }
+
+        .init:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: -15px;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-top: 5px solid f.color(black);
+        }
+    }
+}
