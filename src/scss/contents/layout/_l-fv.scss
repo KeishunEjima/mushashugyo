@@ -40,7 +40,7 @@
 
     &_block {
         &.-yellow {
-            z-index: f.z-index(header, 10);
+            z-index: f.z-index(main, 20);
             position: absolute;
             bottom: 0;
             width: 100%;
@@ -49,7 +49,7 @@
         }
 
         &.-white {
-            z-index: f.z-index(header, 9);
+            z-index: f.z-index(main, 10);
             position: absolute;
             bottom: 0;
             width: 100%;

@@ -1,0 +1,23 @@
+@use "../../base/function/__importer" as f;
+
+.drawer {
+    &_menu {
+        background-color: f.color(opacity-black);
+
+        &-inner {
+            padding: 60px 30px;
+        }
+        
+        &-item {
+            border-top: 1px solid f.color(gray);
+            padding: 14px;
+            color: f.color(white);
+            font-size: f.rem(16);
+            font-weight: f.font-weight(gothic, bold)
+        }
+
+
+    }
+
+
+}

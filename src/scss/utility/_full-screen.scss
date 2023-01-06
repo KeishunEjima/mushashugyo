@@ -1,0 +1,7 @@
+@use "../base/function/__importer" as f;
+
+.full-screen {
+    @include f.media-query(md) {
+        display: none;
+    }
+}

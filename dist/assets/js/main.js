@@ -257,15 +257,15 @@
   function toggleClass(...classes) {
     const classNames = arrayFlat(classes.map((c) => c.split(" ")));
     this.forEach((el) => {
-      classNames.forEach((className) => {
-        el.classList.toggle(className);
+      classNames.forEach((className2) => {
+        el.classList.toggle(className2);
       });
     });
   }
   function hasClass(...classes) {
     const classNames = arrayFlat(classes.map((c) => c.split(" ")));
     return arrayFilter(this, (el) => {
-      return classNames.filter((className) => el.classList.contains(className)).length > 0;
+      return classNames.filter((className2) => el.classList.contains(className2)).length > 0;
     }).length > 0;
   }
   function attr(attrs, value) {
@@ -3884,8 +3884,8 @@
       const swiper = this;
       if (!swiper.params._emitClasses || !swiper.el)
         return;
-      const cls = swiper.el.className.split(" ").filter((className) => {
-        return className.indexOf("swiper") === 0 || className.indexOf(swiper.params.containerModifierClass) === 0;
+      const cls = swiper.el.className.split(" ").filter((className2) => {
+        return className2.indexOf("swiper") === 0 || className2.indexOf(swiper.params.containerModifierClass) === 0;
       });
       swiper.emit("_containerClasses", cls.join(" "));
     }
@@ -3893,8 +3893,8 @@
       const swiper = this;
       if (swiper.destroyed)
         return "";
-      return slideEl.className.split(" ").filter((className) => {
-        return className.indexOf("swiper-slide") === 0 || className.indexOf(swiper.params.slideClass) === 0;
+      return slideEl.className.split(" ").filter((className2) => {
+        return className2.indexOf("swiper-slide") === 0 || className2.indexOf(swiper.params.slideClass) === 0;
       }).join(" ");
     }
     emitSlidesClasses() {
@@ -4423,4 +4423,19 @@
     speed: 1e3,
     watchSlidesProgress: true
   });
+
+  // src/scripts/modules/menu-btn.js
+  var drawerBtn = document.querySelector(".js-menu-btn");
+  var targetElem = document.querySelector(".js-target-elem");
+  var className = "open";
+  drawerBtn.addEventListener("click", function() {
+    returnDrawerClass();
+  });
+  function returnDrawerClass() {
+    if (targetElem.classList.contains(className)) {
+      targetElem.classList.remove(className);
+    } else {
+      targetElem.classList.add(className);
+    }
+  }
 })();
