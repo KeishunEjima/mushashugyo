@@ -257,15 +257,15 @@
   function toggleClass(...classes) {
     const classNames = arrayFlat(classes.map((c) => c.split(" ")));
     this.forEach((el) => {
-      classNames.forEach((className2) => {
-        el.classList.toggle(className2);
+      classNames.forEach((className) => {
+        el.classList.toggle(className);
       });
     });
   }
   function hasClass(...classes) {
     const classNames = arrayFlat(classes.map((c) => c.split(" ")));
     return arrayFilter(this, (el) => {
-      return classNames.filter((className2) => el.classList.contains(className2)).length > 0;
+      return classNames.filter((className) => el.classList.contains(className)).length > 0;
     }).length > 0;
   }
   function attr(attrs, value) {
@@ -3884,8 +3884,8 @@
       const swiper = this;
       if (!swiper.params._emitClasses || !swiper.el)
         return;
-      const cls = swiper.el.className.split(" ").filter((className2) => {
-        return className2.indexOf("swiper") === 0 || className2.indexOf(swiper.params.containerModifierClass) === 0;
+      const cls = swiper.el.className.split(" ").filter((className) => {
+        return className.indexOf("swiper") === 0 || className.indexOf(swiper.params.containerModifierClass) === 0;
       });
       swiper.emit("_containerClasses", cls.join(" "));
     }
@@ -3893,8 +3893,8 @@
       const swiper = this;
       if (swiper.destroyed)
         return "";
-      return slideEl.className.split(" ").filter((className2) => {
-        return className2.indexOf("swiper-slide") === 0 || className2.indexOf(swiper.params.slideClass) === 0;
+      return slideEl.className.split(" ").filter((className) => {
+        return className.indexOf("swiper-slide") === 0 || className.indexOf(swiper.params.slideClass) === 0;
       }).join(" ");
     }
     emitSlidesClasses() {
@@ -4410,32 +4410,59 @@
   }
 
   // src/scripts/modules/swiper.js
-  core_default.use([Autoplay]);
-  new core_default(".swiper", {
-    centeredSlides: true,
-    simulateTouch: false,
-    loop: true,
-    loopAdditionalSlides: 1,
-    autoplay: {
-      delay: 2e3,
-      disableOnInteraction: false
-    },
-    speed: 1e3,
-    watchSlidesProgress: true
-  });
+  function initiateSwiper() {
+    core_default.use([Autoplay]);
+    new core_default(".swiper", {
+      centeredSlides: true,
+      simulateTouch: false,
+      loop: true,
+      loopAdditionalSlides: 1,
+      autoplay: {
+        delay: 2e3,
+        disableOnInteraction: false
+      },
+      speed: 1e3,
+      watchSlidesProgress: true
+    });
+  }
 
-  // src/scripts/modules/menu-btn.js
-  var drawerBtn = document.querySelector(".js-menu-btn");
-  var targetElem = document.querySelector(".js-target-elem");
-  var className = "open";
-  drawerBtn.addEventListener("click", function() {
-    returnDrawerClass();
-  });
-  function returnDrawerClass() {
+  // src/scripts/modules/initiateMenuBtn.js
+  function initiateMenuBtn({ drawerBtn, closeBtn, targetElem, className = "open" }) {
+    drawerBtn.addEventListener("click", function() {
+      returnDrawerClass(targetElem, className);
+    });
+    closeBtn.addEventListener("click", function() {
+      returnDrawerClass(targetElem, className);
+    });
+  }
+  function returnDrawerClass(targetElem, className) {
     if (targetElem.classList.contains(className)) {
       targetElem.classList.remove(className);
     } else {
       targetElem.classList.add(className);
     }
   }
+
+  // src/scripts/modules/accordion.js
+  function accordion({ titles }) {
+    console.log(titles);
+    for (let i = 0; i < titles.length; i++) {
+      let titleEach = titles[i];
+      console.log(titleEach);
+      titleEach.addEventListener("click", () => {
+        titleEach.classList.toggle("is-open");
+      });
+    }
+  }
+
+  // src/scripts/main.js
+  initiateSwiper();
+  initiateMenuBtn({
+    closeBtn: document.querySelector(".js-close-btn"),
+    drawerBtn: document.querySelector(".js-menu-btn"),
+    targetElem: document.querySelector(".js-target-elem")
+  });
+  accordion({
+    titles: document.querySelectorAll(".js-accordion-title")
+  });
 })();

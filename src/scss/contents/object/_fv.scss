@@ -2,17 +2,15 @@
 
 .fv {
     &_text {
-        font-size: f.rem(60);
+        font-size: f.rem(50);
         font-weight: f.font-weight(gothic, bold);
-    }
 
-    &_block {
-        &.-yellow {
-            background-color: f.color(yellow);
-        }
-
-        &.-white {
-            background-color: f.color(white);
+        @include f.media-query(sm) {
+            color: f.color(white);
+            font-weight: f.font-weight(gothic, medium);
+            font-size: f.rem(42);
+            text-shadow: 0 0 5px f.color(black);
+            line-height: 1.25;
         }
     }
 }

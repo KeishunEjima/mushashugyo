@@ -31,7 +31,7 @@
 
     &_item {
         position: relative;
-        margin-right: 30px;
+        margin-right: 25px;
 
         &:last-of-type {
             margin-right: 0;
@@ -71,88 +71,90 @@
 
     &_menu-btn {
         position: relative;
-        width: 50px;
-        height: 38px;
+        
+        &-icon {
+            width: 40px;
+            height: 30px;
 
-        span {
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            background-color: f.color(black);
-
-            &:nth-of-type(1) {
-                top: 0;
-                animation: close-menu-bar01 0.175s forwards normal;
-
-                @keyframes close-menu-bar01 {
-                    0% {
-                        transform: translateY(18px) rotate(45deg);
-                      }
-                    50% {
-                        transform: translateY(18px) rotate(0);
+            span {
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background-color: f.color(black);
+    
+                &:nth-of-type(1) {
+                    top: 0;
+                    animation: close-menu-bar01 0.175s forwards normal;
+    
+                    @keyframes close-menu-bar01 {
+                        0% {
+                            transform: translateY(14px) rotate(45deg);
+                          }
+                        50% {
+                            transform: translateY(14px) rotate(0);
+                        }
+                        100% {
+                            transform: translateY(0) rotate(0);
+                        }
                     }
-                    100% {
-                        transform: translateY(0) rotate(0);
+    
+                    .open & {
+                        animation: open-menu-bar01 0.175s 0.175s forwards;
                     }
-                }
-
-                .open & {
-                    animation: open-menu-bar01 0.175s 0.175s forwards;
-                }
-
-                @keyframes open-menu-bar01 {
-                    0% {
-                        transform: translateY(0) rotate(0);
-                      }
-                    50% {
-                        transform: translateY(18px) rotate(0);
-                    }
-                    100% {
-                        transform: translateY(18px) rotate(45deg);
-                    }
-                }
-            }
-            &:nth-of-type(2) {
-                top: 18px;
-                transition: all 0.175s;
-
-                .open & {
-                    opacity: 0;
-                }
-            }
-            &:nth-of-type(3) {
-                bottom: 0;
-                animation: close-menu-bar03 0.175s forwards ;
-
-                @keyframes close-menu-bar03 {
-                    0% {
-                        transform: translateY(-18px) rotate(-45deg);
-                      }
-                    50% {
-                        transform: translateY(-18px) rotate(0);
-                    }
-                    100% {
-                        transform: translateY(0) rotate(0);
+    
+                    @keyframes open-menu-bar01 {
+                        0% {
+                            transform: translateY(0) rotate(0);
+                          }
+                        50% {
+                            transform: translateY(14px) rotate(0);
+                        }
+                        100% {
+                            transform: translateY(14px) rotate(45deg);
+                        }
                     }
                 }
-
-                .open & {
-                    animation: open-menu-bar03 0.175s 0.175s forwards;
-                }
-
-                @keyframes open-menu-bar03 {
-                    0% {
-                        transform: translateY(0) rotate(0);
-                      }
-                    50% {
-                        transform: translateY(-18px) rotate(0);
+                &:nth-of-type(2) {
+                    top: 14px;
+                    transition: all 0.175s;
+    
+                    .open & {
+                        opacity: 0;
                     }
-                    100% {
-                        transform: translateY(-18px) rotate(-45deg);
+                }
+                &:nth-of-type(3) {
+                    bottom: 0;
+                    animation: close-menu-bar03 0.175s forwards ;
+    
+                    @keyframes close-menu-bar03 {
+                        0% {
+                            transform: translateY(-14px) rotate(-45deg);
+                          }
+                        50% {
+                            transform: translateY(-14px) rotate(0);
+                        }
+                        100% {
+                            transform: translateY(0) rotate(0);
+                        }
+                    }
+    
+                    .open & {
+                        animation: open-menu-bar03 0.175s 0.175s forwards;
+                    }
+    
+                    @keyframes open-menu-bar03 {
+                        0% {
+                            transform: translateY(0) rotate(0);
+                          }
+                        50% {
+                            transform: translateY(-14px) rotate(0);
+                        }
+                        100% {
+                            transform: translateY(-14px) rotate(-45deg);
+                        }
                     }
                 }
             }
         }
-
     }
 }

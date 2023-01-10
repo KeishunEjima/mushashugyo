@@ -1,0 +1,13 @@
+@use "../../base/function/__importer" as f;
+
+.cta {
+    &__block {
+        &.--yellow {
+            background-color: f.color(yellow);
+        }
+    
+        &.--white {
+            background-color: f.color(white);
+        }
+    }
+}

@@ -1,6 +1,7 @@
 @use "../../base/function/__importer" as f;
 
 .header {
+    border-bottom: 2px solid f.color(yellow);
     &_inner {
         padding: 16px 0;
 
@@ -10,6 +11,10 @@
 
         @include f.media-query(xl) {
             padding: 16px 36px;
+        }
+
+        @include f.media-query(md) {
+            padding: 16px;
         }
     }
 

@@ -2,22 +2,71 @@
 
 .drawer {
     &_menu {
-        background-color: f.color(opacity-black);
-
-        &-inner {
-            padding: 60px 30px;
-        }
-        
-        &-item {
-            border-top: 1px solid f.color(gray);
-            padding: 14px;
-            color: f.color(white);
-            font-size: f.rem(16);
-            font-weight: f.font-weight(gothic, bold)
-        }
-
-
+        opacity: 0;
+        visibility: hidden;
     }
+    @include f.media-query(md) {
+        &_menu {
+            background-color: f.color(opacity-black);
+            transition: opacity .5s, visibility .5s;
+    
+            .open & {
+                opacity: 1;
+                visibility: visible;
+            }
+    
+            &-inner {
+                padding: 60px 30px;
+            }
+    
+            &-list {
+                &:first-of-type {
+                    border-top: 1px solid f.color(gray);
+                }
+            }
+            &-item {
+                border-bottom: 1px solid f.color(gray);
+                padding: 13px 10px;
+                color: f.color(white);
+                font-size: f.rem(16);
+                font-weight: f.font-weight(gothic, bold);
+    
+                &::after {
+                    background-color: f.color(white);
+                }
+            }
+        }
 
+        &_sub-menu {
+            &-item {
+                border-bottom: 1px solid f.color(gray);
+                padding: 13px 10px;
+                color: f.color(white);
+                font-size: f.rem(16);
+                font-weight: f.font-weight(gothic, bold);
+    
+                &::after {
+                    background-color: f.color(white);
+                }
 
+                span {
+                    font-size: f.rem(12);
+                }
+            }
+        }
+
+        &_close {
+            &-btn {
+                border: 1px solid f.color(gray);
+                line-height: 50px;
+            }
+            &-text {
+                color: f.color(white);
+                font-weight: f.font-weight(gothic, bold);
+            }
+            &-icon {
+                background-color: f.color(white);
+            }
+        }
+    }
 }

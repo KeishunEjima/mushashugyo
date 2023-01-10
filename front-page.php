@@ -7,20 +7,41 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <picture>
-                                <source src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-1.webp')); ?>" type="image/webp">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-1.jpg')); ?>" alt="">
+                                <source 
+                                srcset="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-1.webp')); ?>"  
+                                media="(min-width: 787)"
+                                >
+                                <source 
+                                srcset="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-1-sp.webp')); ?>"  
+                                media="(max-width: 786px)"
+                                >
+                                <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-1.jpg')); ?>" >
                             </picture>
                         </div>
                         <div class="swiper-slide">
                             <picture>
-                                <source src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-2.webp')); ?>" type="image/webp">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-2.jpg')); ?>" alt="">
+                                <source 
+                                srcset="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-2.webp')); ?>"
+                                media="(min-width: 787)"
+                                >
+                                <source 
+                                srcset="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-2-sp.webp')); ?>"
+                                media="(max-width: 786px)"
+                                >
+                                <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-2.jpg')); ?>" >
                             </picture>
                         </div>
                         <div class="swiper-slide">
                             <picture>
-                                <source src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-3.webp')); ?>" type="image/webp">
-                                <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-3.jpg')); ?>" alt="">
+                                <source 
+                                srcset="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-3.webp')); ?>"
+                                media="(min-width: 787)"
+                                >
+                                <source 
+                                srcset="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-3-sp.webp')); ?>"
+                                media="(max-width: 786px)"
+                                >
+                                <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-3.jpg')); ?>" >
                             </picture>
                         </div>
                     </div>
@@ -39,12 +60,10 @@
                         <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/fv-point-3.svg')); ?>" class="l-fv_point fv_point" alt="">
                     </div>
                 </div>
-                <div class="l-fv_block fv_block -yellow">
-                </div>
-                <div class="l-fv_block fv_block -white">
-                </div>
             </div>
         </div>
+
+
         <?php 
         get_template_part('partials/sec', 'news');
         ?>

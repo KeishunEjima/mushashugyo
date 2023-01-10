@@ -33,7 +33,7 @@
             <div class="medium-screen">
                 <!-- タブレットサイズ時のメニューボタン -->
                 <div class="l-header_menu-btn header_menu-btn js-menu-btn">
-                    <div class="l-header_icon header_icon">
+                    <div class="l-header_menu-btn-icon header_menu-btn-icon">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -43,28 +43,43 @@
             </div>
         </div> 
         <!-- タブレットサイズ時のメニュー -->
-        <nav class="l-drawer_menu drawer_menu">
+        <nav class="l-drawer_menu drawer_menu ">
             <div class="l-drawer_menu-inner drawer_menu-inner">
                 <ul class="l-drawer_menu-list drawer_menu-list">
                     <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">自走式エンジンとは？</a></li>
                     <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">プログラム概要</a></li>
                     <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">講師紹介</a></li>
-                    <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">ミッション</a></li>
+                    <li class="l-drawer_menu-item -has-sub-menu js-accordion-title">
+                        <div class="drawer_menu-item">
+                            <a class="link" href="#">ミッション</a>
+                        </div>
+                        <div class="l-drawer_sub-menu accordion__container">
+                            <ul class="l-drawer_sub-menu-list drawer_sub-menu-list ">
+                                <li class="l-drawer_sub-menu-item drawer_sub-menu-item"><a class="link" href="#">海外ビジネス<span>武者修行プログラム</span></a></li>
+                                <li class="l-drawer_sub-menu-item drawer_sub-menu-item"><a class="link" href="#">地方創生<span>イノベーション武者修行プログラム</span></a></li>
+                                <li class="l-drawer_sub-menu-item drawer_sub-menu-item"><a class="link -disable" href="#">オフライン<span>武者修行プログラム</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">参加者の声</a></li>
                     <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">保護者の方へ</a></li>
-                    <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">自治体教育機関の方へ</a></li>
+                    <li class="l-drawer_menu-item drawer_menu-item"><a class="link -disable" href="#">自治体教育機関の方へ</a></li>
                     <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">友達紹介キャンペーン</a></li>
                 </ul>
-                <ul class="l-heade_menu-sublist drawer_menu-sublist">
-                    <li class="l-drawer_menu-item drawer_menu-item"><a href="#">コラム</a></li>
-                    <li class="l-drawer_menu-item drawer_menu-item"><a href="#">ニュース</a></li>
-                    <li class="l-drawer_menu-item drawer_menu-item"><a href="#">よくある質問</a></li>
-                    <li class="l-drawer_menu-item drawer_menu-item"><a href="#">お問い合わせ</a></li>
+                <ul class="l-drawer_menu-sub-list drawer_menu-sub-list">
+                    <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">コラム</a></li>
+                    <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">ニュース</a></li>
+                    <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">よくある質問</a></li>
+                    <li class="l-drawer_menu-item drawer_menu-item"><a class="link" href="#">お問い合わせ</a></li>
                 </ul>
-                <div class="l-drawer_close">
-                    <a class="l-btn btn" href="#">
-                        ClOSE
-                    </a>
+                <div class="l-drawer_close drawer_close js-close-btn">
+                    <div class="l-drawer_close-btn drawer_close-btn">
+                        <p class="l-drawer_close-text drawer_close-text link">
+                            CLOSE
+                        </p>
+                        <span class="l-drawer_close-icon drawer_close-icon"></span>
+                        <span class="l-drawer_close-icon drawer_close-icon"></span>
+                    </div>
                 </div>
             </div>
         </nav>
