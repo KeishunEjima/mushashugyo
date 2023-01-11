@@ -64,8 +64,12 @@
         </div>
 
 
-        <?php 
-        get_template_part('partials/sec', 'news');
+        <?php
+            get_template_part('partials/cta', null, ['headerText' => true]);
+        ?>
+
+        <?php
+            get_template_part('partials/cta', null, ['headerText' => false] );
         ?>
     </main>
 

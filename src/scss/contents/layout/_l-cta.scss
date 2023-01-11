@@ -1,29 +1,90 @@
 @use "../../base/function/__importer" as f;
 
 .l-cta {
+    position: relative;
     &__block {
         &.--yellow {
             z-index: f.z-index(main, 20);
             position: absolute;
-            bottom: 0;
+            top: -100px;
             width: 100%;
-            height: 100px;;
+            height: 100px;
             clip-path: polygon(100% 0, 0% 100%, 100% 100%);
             @include f.media-query(sm) {
-                clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+                top: -50px;
+                height: 50px;
             }
         }
 
         &.--white {
             z-index: f.z-index(main, 10);
             position: absolute;
-            bottom: 0;
+            top: -100px;
             width: 100%;
-            height: 100px;;
+            height: 100px;
             clip-path: polygon(0 0, 0% 100%, 100% 100%);
             @include f.media-query(sm) {
-                clip-path: polygon(0 50%, 0 100%, 100% 100%);
+                top: -50px;
+                height: 50px;
             }
         }
+    }
+
+    &__inner {
+        display: grid;
+        place-items: center;
+    }
+    
+    &__header {
+        position: relative;
+        margin-bottom: 25px;
+        
+        &-text {
+            position: relative;
+            z-index: f.z-index(main, 2);
+        }
+
+        &::after {
+            content: "";
+            z-index: f.z-index(main, 1);
+            position: absolute;
+            bottom: 20%;
+            width: 100%;
+            height: f.rem(12);
+
+            @include f.media-query(sm) {
+                bottom: 10%;
+            }
+        }
+    }
+    
+    &__btn{
+        z-index: f.z-index(main);
+        position: relative;
+        width: 530px;
+        height: 96px;
+
+        @include f.media-query(sm) {
+            width: 365px;
+        }
+
+        &-text {
+            width: 330px;
+            height: auto;
+
+            @include f.media-query(sm) {
+                width: 250px;
+            }
+        }
+    }
+
+    &__ballon-wrapper {
+        position: absolute;
+        display: flex;
+        gap: 570px;
+    }
+
+    &__footer {
+        margin-top: 24px;
     }
 }

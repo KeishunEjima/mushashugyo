@@ -10,4 +10,45 @@
             background-color: f.color(white);
         }
     }
+
+    &__contain {
+        padding: 20px;
+        background: f.color(yellow);
+    }
+
+    &__header {
+        font-size: f.rem(20);
+        font-weight: f.font-weight(gothic, bold);
+
+        @include f.media-query(sm) {
+            font-size: f.rem(16);
+        }
+
+        &::after {
+            background-color: f.color(white);
+            transform: skewX(-30deg);
+        }
+    }
+
+    &__btn {
+        background: f.color(white);
+    }
+
+    &__footer {
+        padding-bottom: 5px;
+        font-weight: f.font-weight(gothic, bold);
+        font-size: f.rem(22);
+        background-image : linear-gradient(to right, f.color(black) 4px, transparent 4px);
+        background-size: 14px 3px;
+        background-repeat: repeat-x;
+        background-position: right bottom;
+
+        @include f.media-query(sm) {
+            font-size: f.rem(16);
+            background-image : linear-gradient(to right, f.color(black) 4px, transparent 4px);
+            background-size: 11px 4px;
+            background-repeat: repeat-x;
+            background-position: right bottom;
+        }
+    }
 }

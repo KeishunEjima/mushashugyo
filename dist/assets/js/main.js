@@ -4445,10 +4445,8 @@
 
   // src/scripts/modules/accordion.js
   function accordion({ titles }) {
-    console.log(titles);
     for (let i = 0; i < titles.length; i++) {
       let titleEach = titles[i];
-      console.log(titleEach);
       titleEach.addEventListener("click", () => {
         titleEach.classList.toggle("is-open");
       });

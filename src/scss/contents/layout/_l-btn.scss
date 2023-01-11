@@ -1,11 +1,18 @@
 @use "../../base/function/__importer" as f;
 
 .l-btn {
-        position: relative;
-        margin: 0 auto;
+    position: relative;
+    display: grid;
+    place-items: center;
+    place-content: center;
 
-        &.-text{
-            display: grid;
-            place-content: center;
-        }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 4.9%;
+        height: 3px;
+    }
 }

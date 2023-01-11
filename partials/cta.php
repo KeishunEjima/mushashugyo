@@ -3,23 +3,27 @@
     </div>
     <div class="l-cta__block cta__block --white">
     </div>
-    <div class="l-cta__content">
+    <div class="l-cta__contain cta__contain">
         <div class="l-cta__inner">
-            <div class="l-cta__header">
-                <p>２週間のビジネスプログラムで人生を切り開く</p>
-            </div>
-            <div class="l-cta__btn">
-                <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/cta-btn-text')); ?>" >
+            <?php if(isset($args['headerText']) && $args['headerText'] === true): ?>
+                <div class="l-cta__header cta__header">
+                    <p class="l-cta__header-text cta__header-text">２週間のビジネスプログラムで人生を切り開く</p>
+                </div>
+            <?php endif; ?>
+            <div class="l-cta__btn cta__btn l-btn btn">
+                <a class="link" href="#">
+                    <img class="l-cta__btn-text" src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/cta-btn-text.svg')); ?>" >
+                </a>
             </div>
             <div class="l-cta__ballon-wrapper">
                 <div class="l-cta__ballon-left">
-                    <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/cta-ballon-left')); ?>" >
+                    <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/cta-balloon-left.svg')); ?>" >
                 </div>
                 <div class="l-cta__ballon-right"> 
-                    <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/cta-ballon-right')); ?>" >
+                    <img src="<?php echo esc_url(get_theme_file_uri('/dist/assets/image/cta-balloon-right.svg')); ?>" >
                 </div>
             </div>
-            <div class="l-cta__footer">
+            <div class="l-cta__footer cta__footer">
                 <p>学部・学年・経験不要</p>
             </div>
         </div>
