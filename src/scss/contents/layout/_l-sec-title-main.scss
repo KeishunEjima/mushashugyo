@@ -1,0 +1,23 @@
+@use "../../base/function/__importer" as f;
+
+.l-sec-title-main {
+    position: relative;
+    &__text {
+        position: relative;
+        display: flex;
+        z-index: f.z-index(main, 10);
+    }
+    
+    &__title {
+        margin: 0;
+    }
+    
+    &__slug {
+        padding-top: f.rem(30);
+    }
+
+    &__image {
+        margin-top: -16%;
+        z-index: f.z-index(main, 5);
+    }
+}

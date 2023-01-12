@@ -1,0 +1,20 @@
+@use "../../base/function/__importer" as f;
+
+.sec-title-main {
+    &__title {
+        font-size: f.rem(90);
+        font-weight: f.font-weight(gothic, black);
+        color: f.color(yellow);
+        writing-mode: vertical-rl;
+    }
+
+    &__intro {
+        font-weight: f.font-weight(gothic, bold);
+    }
+
+    &__top,
+    &__bottom {
+        font-size: f.rem(50);
+        font-weight: f.font-weight(gothic, bold);
+    }
+}

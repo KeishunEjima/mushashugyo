@@ -32,6 +32,7 @@
 
     &__btn {
         background: f.color(white);
+        filter: drop-shadow(5px 5px 0 f.color(black));
     }
 
     &__footer {

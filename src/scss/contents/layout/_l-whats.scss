@@ -1,0 +1,9 @@
+@use "../../base/function/__importer" as f;
+
+.l-whats {
+    &__youtube {
+        margin-top: 60px;
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+}

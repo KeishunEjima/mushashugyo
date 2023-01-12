@@ -10,17 +10,21 @@
 @use  "contents/__btn";
 /* End btn */
 
-/* Start sec-news */
-@use  "contents/__sec-news";
-/* End sec-news */
+/* Start news */
+@use  "contents/__news";
+/* End news */
 
 /* Start drawer */
 @use  "contents/__drawer";
 /* End drawer */
 
-/* Start sec-title */
-@use  "contents/__sec-title";
-/* End sec-title */
+/* Start sec-title-info */
+@use  "contents/__sec-title-info";
+/* End sec-title-info */
+
+/* Start sec-title-main */
+@use  "contents/__sec-title-main";
+/* End sec-title-main */
 
 /* Start fv */
 @use  "contents/__fv";
@@ -34,6 +38,10 @@
 @use  "contents/__mask";
 /* End mask */
 
+/* Start whats */
+@use  "contents/__whats";
+/* End whats */
+
 /* Start reset */
 @use  "base/_reset";
 /* End reset */
@@ -41,6 +49,10 @@
 /* Start link */
 @use  "utility/link";
 /* End link */
+
+/* Start wrapper */
+@use  "utility/wrapper";
+/* End wrapper */
 
 /* Start full-screen */
 @use  "utility/full-screen";

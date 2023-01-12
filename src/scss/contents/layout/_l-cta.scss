@@ -82,6 +82,15 @@
         position: absolute;
         display: flex;
         gap: 570px;
+
+        @include f.media-query(sm) {
+            position: static;
+            gap: 10px;
+
+            &-item {
+                max-width: 167px;
+            }
+        }
     }
 
     &__footer {

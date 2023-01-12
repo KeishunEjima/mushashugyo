@@ -5,7 +5,7 @@
                 'sec-title' => 'NEWS',
                 'sec-slug' => '最新情報'
             ];
-            get_template_part('partials/sec', 'title' , $args );
+            get_template_part('partials/secTitle', 'info' , $args );
         ?>
         <?php 
         $args = array(
@@ -37,9 +37,9 @@
                 <?php endif; ?>
                 <?php wp_reset_postdata(); ?>
             </ul>
+            <div class="l-news__btn l-btn btn">
+                <a href="#">MORE</a>
+            </div>
         </div>
-    <?php
-    get_template_part('partials/btn' );
-    ?>
     </div>
 </section>
